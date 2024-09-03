@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <body>
+        <div id="root"></div>
+
+    </body>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+        // props : 인자(오브젝트)를 받아서 넣어줄 수 있다.
+        function Btn ({props}){
+            return <button style={{
+                backgroundColor:"tomato",
+                color:"white",
+                padding:"10px 20px",
+                border:0,
+                borderRadius:10,
+                fontSize : props.big ? 20 : 15 // 삼항연산자
+            }}>
+                {/*이런 형식으로 값을 넣어서 다른 결과를 보여줄 수 있다.*/}
+                {props.banana}
+            </button>
+        }
+
+        function ConfirmBtn(){
+            return <button style={{
+                backgroundColor:"tomato",
+                color:"white",
+                padding:"10px 20px",
+                border:0,
+                borderRadius:10,         
+            }}>
+                Confirm
+            </button>
+        }
+
+
+        function App(){
+
+            return (
+                <div>
+                    <Btn banana="Save Change" big = {true}/>
+                    <Btn banana="Confirm" big = {false}/>
+                </div>
+            );
+        }
+
+        const root = document.getElementById("root");
+        ReactDOM.createRoot(root).render(<App/>); 
+        
+     </script>
+</html>
+

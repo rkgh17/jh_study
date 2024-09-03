@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <body>
+        <div id="root"></div>
+
+    </body>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- JSX Bable -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // react element 생성
+        // root 안에 넣기
+        // 리액트가 html안에 값을 넣는 법
+        const root = document.getElementById("root");
+
+        // span에 값을 주는 argument
+        // const span = React.createElement(
+        //     "h3",
+        //     /*{id:"sexy-span", style:{ color:"red"} },*/ {
+        //         id : "title",
+        //         onMouseEnter: ()=> console.log("mouse enter")
+        //     },
+        //      "Hello I'm a span"
+        //     );
+
+        // 위 방법을 JSX로
+        // const span = (
+        //     <h3 id = "title" onMouseEnter={()=> console.log("mouse enter!")}>Hello i'm a title</h3>
+        //     );
+        // 위 방법을 JSX 함수로
+        function Title(){
+            return (
+                <h3 id = "title"
+                    onMouseEnter={()=> console.log("mouse enter!")}
+                    >
+                    Hello i'm a title
+                </h3>
+            );
+        }
+
+        // const btn = React.createElement("button", {
+        //     onClick: ()=> console.log("im clicked",),
+        //     style:{backgroundColor:"tomato"}
+        // } , "Click me")
+        
+        // JSX
+        // const btn = (
+        //     <button
+        //      onClick={()=>console.log("im clicked")}
+        //      style={{
+        //         backgroundColor:"tomato"
+        //     }}>Click me</button>
+        // );
+        // JSX 함수
+        const Button = ()=>{
+            return(
+                <button
+                    onClick={()=>console.log("im clicked")}
+                    style={{
+                        backgroundColor:"tomato"
+                }}>Click me</button>
+            );
+        }
+
+        // const div = React.createElement("div",null, [span, btn]);
+        // JSX 컴포넌트 -> 무조건 대문자로
+        const Countainer = ()=> (
+            <div>
+                <Title/>
+                <Button/>
+            </div>
+        );
+
+
+        // 랜더링
+        // ReactDOM.createRoot(root).render(span);
+
+        // 2개 랜더링
+        // ReactDOM.createRoot(root).render(div);
+        
+        // 랜더링 JSX
+        ReactDOM.createRoot(root).render(<Countainer/>);
+
+        
+    </script>
+
+</html>
+
+
+
+
+
+<!--
+
+
+23-02-09
+어제는 코딩애플에서 react 강의를 들었다.
+어제 들었던 강의에서는 index.js파일을 통해 index.html에 넣는다고 설명만 하고 넘어갔는데,
+오늘은 그 동작과정에 대해서 알아봤다. 
+확실히 이런 식의 흐름으로 리액트가 html안에 값을 넣는구나 하고 알았던 날이었다.
+
+
+-->
