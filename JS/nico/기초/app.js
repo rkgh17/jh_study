@@ -128,19 +128,134 @@
 
 // 2.13 Conditionsals
 
-const age = prompt("How old are you?");
+// const age = prompt("How old are you?");
 
-console.log(age);
-console.log(typeof age);
+// console.log(age);
+// console.log(typeof age);
 
-console.log(parseInt(age));
+// console.log(parseInt(age));
 
-const newAge = parseInt(prompt("How old are you?"));
+// const newAge = parseInt(prompt("How old are you?"));
 
-console.log(newAge);
+// console.log(newAge);
 
-if (isNaN(newAge)) {
-  console.log("Please write a number");
-} else {
-  console.log("Good");
+// if (isNaN(newAge)) {
+//   console.log("Please write a number");
+// } else {
+//   console.log("Good");
+// }
+
+// ========================================================
+
+// 3.1 HTML in Javascript
+// 3.2 Searching For Elements
+
+// const title = document.getElementById("title");
+// const hellos = document.getElementsByClassName("hello");
+// const title = document.getElementsByTagName("h1");
+
+// css처럼 사용 가능
+// const title = document.querySelector(".hello h1");
+
+// const fTitle = document.querySelector(".hello:first-child h1");
+
+// title.innerText = "Got you!";
+
+// console.log(title.id);
+// console.log(title.className);
+
+// title.style.color = "blue";
+
+// ========================================================
+
+// 3.3 3.4 3.5 Event
+
+// const h1 = document.querySelector("div.hello:first-child h1");
+
+// function handleTitleClick() {
+//   console.log("title was clicked");
+//   h1.style.color = "blue";
+// }
+
+// function handleMouseEnter() {
+//   h1.innerText = "Mouse is here!";
+// }
+
+// function handleMouseLeave() {
+//   h1.innerText = "Mouse is gone!";
+// }
+
+// // event 리스너 설정
+
+// // 방법1
+// // h1.addEventListener("click", handleTitleClick);
+
+// // 방법2
+// h1.onclick = handleTitleClick;
+
+// // title.addEventListener("mouseenter", handleMouseEnter);
+// h1.onmouseenter = handleMouseEnter;
+// h1.addEventListener("mouseleave", handleMouseLeave);
+
+// function handleWindowResize() {
+//   document.body.style.backgroundColor = "tomato";
+// }
+// window.addEventListener("resize", handleWindowResize);
+
+// function handleWindowCopy() {
+//   alert("copier!");
+// }
+// window.addEventListener("copy", handleWindowCopy);
+
+// function handleWindowOffline() {
+//   alert("SOS no WIFI");
+// }
+// function handleWindowOnline() {
+//   alert("ALL GOOD");
+// }
+
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+
+// ========================================================
+
+// 3.6 CSS in Javascript
+
+// const h1 = document.querySelector("div.hello:first-child h1");
+
+// function handleTitleClick() {
+//   const currentColor = h1.style.color;
+//   let newColor;
+
+//   if (currentColor === "blue") {
+//     newColor = "tomato";
+//   } else {
+//     newColor = "blue";
+//   }
+
+//   h1.style.color = newColor;
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+// 3.7
+
+const h1 = document.querySelector("div.hello:first-child h1");
+
+// function handleTitleClick() {
+//   const clickedClass = "clicked";
+//   const className = h1.classList;
+
+//   if (className.contains(clickedClass)) {
+//     h1.classList.remove(clickedClass);
+//   } else {
+//     h1.classList.add(clickedClass);
+//   }
+// }
+
+// 위 코드와 동일
+function handleTitleClick() {
+  h1.classList.toggle("clicked");
 }
+
+h1.addEventListener("click", handleTitleClick);
