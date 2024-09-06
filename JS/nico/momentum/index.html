@@ -3,10 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="loginStyle.css" />
     <title>Momentum App</title>
   </head>
   <body>
-    <script src="app.js"></script>
+    <form id="login-form" class="hidden">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <button>Log In</button>
+    </form>
+    <!-- <a href="https://nomadcoder.co">Go to COURSES</a> -->
+    <h1 id="greeting" class="hidden"></h1>
+    <script src="login.js"></script>
   </body>
 </html>
